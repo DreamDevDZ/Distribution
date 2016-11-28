@@ -1,10 +1,5 @@
-/**
- * Exports lists of modules to be bundled as external "dynamic" libraries
- *
- * (@see webpack DllPlugin and DllReferencePlugin)
- */
 module.exports = {
-  'angular_dll': [
+  'lib-angular': [
     'angular',
     'angular/angular.min',
     'angular-animate',
@@ -37,79 +32,79 @@ module.exports = {
     'angular-bootstrap/ui-bootstrap-tpls.min',
     'angular-gridster/dist/angular-gridster.min.js'
   ],
-  'es6_shim_dll': [
+  'lib-es6-shim': [
     'core-js/shim'
   ],
-  'pdf_player_dll': [
-      'pdfjs-dist/build/pdf.combined'
+  'lib-pdf-player': [
+    'pdfjs-dist/build/pdf.combined'
   ],
-  'lodash_dll': [
-      'lodash/lodash'
+  'lib-lodash': [
+    'lodash/lodash'
   ],
-  'moment_dll': [
-      'moment/moment',
-      'moment/min/moment-with-locales'
+  'lib-moment': [
+    'moment/moment',
+    'moment/min/moment-with-locales'
   ],
-  'tinymce_dll': [
-      'tinymce/tinymce',
-      'tinymce/plugins/paste/plugin',
-      'tinymce/plugins/link/plugin',
-      'tinymce/plugins/autoresize/plugin',
-      'tinymce/plugins/table/plugin',
-      'tinymce/plugins/directionality/plugin',
-      'tinymce/plugins/template/plugin',
-      'tinymce/plugins/textcolor/plugin',
-      'tinymce/plugins/visualchars/plugin',
-      'tinymce/plugins/fullscreen/plugin',
-      'tinymce/plugins/insertdatetime/plugin',
-      'tinymce/plugins/media/plugin',
-      'tinymce/plugins/preview/plugin',
-      'tinymce/plugins/hr/plugin',
-      'tinymce/plugins/anchor/plugin',
-      'tinymce/plugins/pagebreak/plugin',
-      'tinymce/plugins/searchreplace/plugin',
-      'tinymce/plugins/wordcount/plugin',
-      'tinymce/plugins/advlist/plugin',
-      'tinymce/plugins/autolink/plugin',
-      'tinymce/plugins/lists/plugin',
-      'tinymce/plugins/image/plugin',
-      'tinymce/plugins/charmap/plugin',
-      'tinymce/plugins/print/plugin',
-      'tinymce/plugins/visualblocks/plugin',
-      'tinymce/plugins/nonbreaking/plugin',
-      'tinymce/plugins/save/plugin',
-      'tinymce/plugins/emoticons/plugin',
-      'tinymce/plugins/code/plugin',
-      //css
-      'tinymce/skins/lightgray/content.min.css',
-      'tinymce/skins/lightgray/skin.min.css',
-      //themes
-      'tinymce/themes/modern/theme'
+  'lib-tinymce': [
+    'tinymce/tinymce',
+    'tinymce/plugins/paste/plugin',
+    'tinymce/plugins/link/plugin',
+    'tinymce/plugins/autoresize/plugin',
+    'tinymce/plugins/table/plugin',
+    'tinymce/plugins/directionality/plugin',
+    'tinymce/plugins/template/plugin',
+    'tinymce/plugins/textcolor/plugin',
+    'tinymce/plugins/visualchars/plugin',
+    'tinymce/plugins/fullscreen/plugin',
+    'tinymce/plugins/insertdatetime/plugin',
+    'tinymce/plugins/media/plugin',
+    'tinymce/plugins/preview/plugin',
+    'tinymce/plugins/hr/plugin',
+    'tinymce/plugins/anchor/plugin',
+    'tinymce/plugins/pagebreak/plugin',
+    'tinymce/plugins/searchreplace/plugin',
+    'tinymce/plugins/wordcount/plugin',
+    'tinymce/plugins/advlist/plugin',
+    'tinymce/plugins/autolink/plugin',
+    'tinymce/plugins/lists/plugin',
+    'tinymce/plugins/image/plugin',
+    'tinymce/plugins/charmap/plugin',
+    'tinymce/plugins/print/plugin',
+    'tinymce/plugins/visualblocks/plugin',
+    'tinymce/plugins/nonbreaking/plugin',
+    'tinymce/plugins/save/plugin',
+    'tinymce/plugins/emoticons/plugin',
+    'tinymce/plugins/code/plugin',
+    //css
+    'tinymce/skins/lightgray/content.min.css',
+    'tinymce/skins/lightgray/skin.min.css',
+    //themes
+    'tinymce/themes/modern/theme'
   ],
-  'jqueryui_dll': [
-      'jquery-ui/jquery-ui',
-      'jquery-ui/jquery-ui.min',
-      'jquery-ui/ui/draggable',
-      'jquery-ui/ui/resizable'
+  'lib-jqueryui': [
+    'jquery-ui/jquery-ui',
+    'jquery-ui/jquery-ui.min',
+    'jquery-ui/ui/draggable',
+    'jquery-ui/ui/resizable'
   ],
-  'bootstrapui_dll': [
-      'bootstrap-daterangepicker',
-      'mjolnic-bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css',
-      'mjolnic-bootstrap-colorpicker/dist/js/bootstrap-colorpicker',
-      'eonasdan-bootstrap-datetimepicker',
-      'confirm-bootstrap/confirm-bootstrap'
+  'lib-bootstrapui': [
+    'bootstrap-daterangepicker',
+    'mjolnic-bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css',
+    'mjolnic-bootstrap-colorpicker/dist/js/bootstrap-colorpicker',
+    'eonasdan-bootstrap-datetimepicker',
+    'confirm-bootstrap/confirm-bootstrap'
   ],
-  'libraries_dll': [
-      'underscore',
-      'Datejs/build/date'
+  'lib-libraries': [
+    'underscore',
+    'Datejs/build/date'
   ],
-  'wavesurfer_dll': [
-      'wavesurfer.js/dist/wavesurfer',
-      'wavesurfer.js/dist/plugin/wavesurfer.minimap.min',
-      'wavesurfer.js/dist/plugin/wavesurfer.timeline.min',
-      'wavesurfer.js/dist/plugin/wavesurfer.regions.min'
+  'lib-wavesurfer': [
+    'wavesurfer.js/dist/wavesurfer',
+    'wavesurfer.js/dist/plugin/wavesurfer.minimap.min',
+    'wavesurfer.js/dist/plugin/wavesurfer.timeline.min',
+    'wavesurfer.js/dist/plugin/wavesurfer.regions.min'
   ],
-  'calendar_dll': [
-      'fullcalendar/dist/fullcalendar'
+  'lib-calendar': [
+    'fullcalendar/dist/fullcalendar'
   ]
 }

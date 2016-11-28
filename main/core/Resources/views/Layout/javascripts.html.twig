@@ -27,13 +27,14 @@
 {# Loads webpack commons.js and libraries.js (minified) files #}
 {{ jsmacros.getCommonJavascripts() }}
 
-<script src="{{ hotAsset('dist/claroline-distribution-main-core-core-js.js') }}"></script>
-
 <script>
     if (window.sessionStorage.getItem('hide_brower_warning')) {
         $('.outdated-browser-warning').hide();
     }
 </script>
+
+{# This should probably go on top #}
+<script src="{{ hotAsset('dist/claroline-distribution-main-core-core-js.js') }}"></script>
 
 <script src='{{ hotAsset('dist/claroline-distribution-main-core-iframe.js') }}'></script>
 

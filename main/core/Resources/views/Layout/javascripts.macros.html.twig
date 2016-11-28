@@ -1,16 +1,15 @@
 {% macro getLibsAndDlls() %}
-    <script src="{{ hotAsset('dist/es6_shim_dll.js') }}"></script>
-    <script src="{{ hotAsset('dist/angular_dll.js') }}"></script>
+<script src="{{ hotAsset('dist/lib-calendar.js') }}"></script>  {# ?? #}
+    <script src="{{ hotAsset('dist/lib-es6-shim.js') }}"></script>
     {# les blocs suivant sont à rajouter aux bon endroits et à supprimer du layout ! #}
-    <script src="{{ hotAsset('dist/pdf_player_dll.js') }}"></script> {# ?? #}
-    <script src="{{ hotAsset('dist/lodash_dll.js') }}"></script> {# ?? #}
-    <script src="{{ hotAsset('dist/moment_dll.js') }}"></script> {# ?? #}
-    <script src="{{ hotAsset('dist/tinymce_dll.js') }}"></script> {# ?? #}
-    <script src="{{ hotAsset('dist/jqueryui_dll.js') }}"></script> {# ?? #}
-    <script src="{{ hotAsset('dist/bootstrapui_dll.js') }}"></script> {# ?? #}
-    <script src="{{ hotAsset('dist/libraries_dll.js') }}"></script> {# ?? #}
-    <script src="{{ hotAsset('dist/wavesurfer_dll.js') }}"></script> {# ?? #}
-    <script src="{{ hotAsset('dist/calendar_dll') }}"></script>  {# ?? #}
+    <script src="{{ hotAsset('dist/lib-pdf-player.js') }}"></script> {# ?? #}
+    <script src="{{ hotAsset('dist/lib-lodash.js') }}"></script> {# ?? #}
+    <script src="{{ hotAsset('dist/lib-moment.js') }}"></script> {# ?? #}
+    <script src="{{ hotAsset('dist/lib-tinymce.js') }}"></script> {# ?? #}
+    <script src="{{ hotAsset('dist/lib-jqueryui.js') }}"></script> {# ?? #}
+    <script src="{{ hotAsset('dist/lib-bootstrapui.js') }}"></script> {# ?? #}
+    <script src="{{ hotAsset('dist/lib-libraries.js') }}"></script> {# ?? #}
+    <script src="{{ hotAsset('dist/lib-wavesurfer.js') }}"></script> {# ?? #}
     <script src="{{ asset('packages/underscore/underscore.js') }}"></script>
     <script src="{{ asset('packages/backbone/backbone.js') }}"></script>
 {% endmacro %}
@@ -24,9 +23,6 @@
     %}
     <script src="{{ asset_url }}"></script>
     {% endjavascripts %}
-    {% if app.environment == 'prod' %}
-        <script src="{{ hotAsset('dist/commons.js') }}"></script>
-    {% endif %}
 {% endmacro %}
 
 

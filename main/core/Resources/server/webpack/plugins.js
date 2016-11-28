@@ -1,8 +1,9 @@
 const webpack = require('webpack')
 const AssetsPlugin = require('assets-webpack-plugin')
 const FailPlugin = require('webpack-fail-plugin')
-const paths = require('./paths')
 const ConfigurationPlugin = require('./build/configuration/plugin')
+const paths = require('./paths')
+const libraries = require('./libraries')
 
 /**
  * Allows webpack to discover entry files of modules stored in the bower
@@ -56,13 +57,12 @@ const configShortcut = () => {
 
 
 /**
- * Builds a independent bundle for frequently requested modules (might require
- * minChunks adjustments).
+ * Builds independent chunks for vendor libraries.
  */
-const commonsChunk = () => {
+const libChunks = () => {
   return new webpack.optimize.CommonsChunkPlugin({
-    name: 'commons',
-    minChunks: 5
+    names: Object.keys(libraries),
+    minChunks: Infinity
   })
 }
 
@@ -118,26 +118,6 @@ const exitWithErrorCode = () => {
   return FailPlugin
 }
 
-/**
- * Bundles entries in separate DLLs to improve build performance.
- */
-const dlls = () => {
-  return new webpack.DllPlugin({
-    path: `${paths.output()}/[name].manifest.json`,
-    name: '[name]_[hash]'
-  })
-}
-
-/**
- * Includes references to generated DLLs
- */
-const dllReferences = manifests => {
-  return manifests.map(manifest => new webpack.DllReferencePlugin({
-    context: '.',
-    manifest
-  }))
-}
-
 const clarolineConfiguration = () => {
   return new ConfigurationPlugin()
 }
@@ -145,14 +125,12 @@ const clarolineConfiguration = () => {
 module.exports = {
   bowerFileLookup,
   distributionShortcut,
-  commonsChunk,
+  libChunks,
   assetsInfoFile,
   dedupeModules,
   defineProdEnv,
   rejectBuildErrors,
   exitWithErrorCode,
-  dllReferences,
-  dlls,
   configShortcut,
   clarolineConfiguration
 }
