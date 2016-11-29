@@ -34,14 +34,15 @@
 
         {% block favicon %}
             <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
+            <link rel="apple-touch-icon" href="{{ asset('apple-touch-icon.png')}}"/>
         {% endblock %}
 
         {% block javascripts_header %}
         {% endblock %}
     </head>
-    <body id="claroline-base-layout-body">
+    <body>
         {% if not app.session.get('hide_browser_warning') %}
-            <div class="alert alert-danger outdated-browser-warning" style="text-align='center';">
+            <div class="alert alert-danger outdated-browser-warning" style="text-align: center;">
                 <a id="close-browser-warning" class="close" data-dismiss="alert" href="#" aria-hidden="true">&times;</a>
                 <div align="center"> <i class="fa fa-warning"></i>
                     {{ 'outdated_brower_message'|trans({}, 'platform') }}
