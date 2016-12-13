@@ -106,7 +106,7 @@ class WorkspaceRepository extends EntityRepository
      *
      * @return int
      */
-    public function count()
+    public function count(array $parameters)
     {
         $dql = 'SELECT COUNT(w) FROM Claroline\CoreBundle\Entity\Workspace\Workspace w';
         $query = $this->_em->createQuery($dql);

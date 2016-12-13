@@ -299,13 +299,13 @@ class UsersController extends Controller
         if ($form->isValid()) {
             $file = $form->get('file')->getData();
             $sendMail = $form->get('sendMail')->getData();
-            $enableEmailNotification = $form->get('enable_mail_notification')->getData();
             $data = file_get_contents($file);
             $data = $this->container->get('claroline.utilities.misc')->formatCsvOutput($data);
             $lines = str_getcsv($data, PHP_EOL);
             $users = [];
             $toUpdate = [];
             $sessionFlashBag = $this->session->getFlashBag();
+            $options = [];
 
             foreach ($lines as $line) {
                 if (trim($line) !== '') {
@@ -358,8 +358,7 @@ class UsersController extends Controller
                     $toUpdate,
                     $sendMail,
                     null,
-                    $additionalRoles,
-                    $enableEmailNotification
+                    $additionalRoles
                 );
 
                 foreach ($updatedNames as $name) {
@@ -377,8 +376,7 @@ class UsersController extends Controller
                 $users,
                 $sendMail,
                 null,
-                $additionalRoles,
-                $enableEmailNotification
+                $additionalRoles
             );
 
             foreach ($createdNames as $name) {

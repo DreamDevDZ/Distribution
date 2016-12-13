@@ -70,7 +70,7 @@ class FacetRepository extends EntityRepository
         return $qb->getQuery()->getResult();
     }
 
-    public function count($isMain = false)
+    public function count(array $parameters)
     {
         $isMain = !is_bool($isMain) ? $isMain === 'true' : $isMain;
         $dql = '

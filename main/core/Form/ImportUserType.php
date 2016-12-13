@@ -35,44 +35,37 @@ class ImportUserType extends AbstractType
         $builder->add(
             'file',
             'file',
-            array(
+            [
                 'required' => true,
                 'mapped' => false,
-                'constraints' => array(
+                'constraints' => [
                     new NotBlank(),
                     new File(),
                     new CsvUser($this->mode),
-                ),
-            )
+                ],
+            ]
         )->add(
             'mode',
             'choice',
-            array(
+            [
                 'label' => 'mode',
-                'choices' => array('create' => 'create_only', 'update' => 'create_and_update'),
+                'choices' => ['create' => 'create_only', 'update' => 'create_and_update'],
                 'required' => true,
-            )
+            ]
         )->add(
             'sendMail',
             'checkbox',
-            array(
+            [
                 'label' => 'send_mail',
                 'required' => false,
-            )
-        )->add(
-            'enable_mail_notification',
-            'checkbox',
-            array(
-                'label' => 'user_enable_mail_notification_label',
-                'required' => false,
-            )
+            ]
         );
 
         if ($this->showRoles) {
             $builder->add(
                 'roles',
                 'entity',
-                array(
+                [
                     'required' => false,
                     'label' => 'roles',
                     'mapped' => false,
@@ -82,14 +75,14 @@ class ImportUserType extends AbstractType
                     'multiple' => true,
                     'property' => 'translationKey',
                     'query_builder' => function (\Doctrine\ORM\EntityRepository $er) {
-                            $query = $er->createQueryBuilder('r')
+                        $query = $er->createQueryBuilder('r')
                                 ->where('r.type = '.Role::PLATFORM_ROLE)
                                 ->andWhere("r.name != 'ROLE_ANONYMOUS'")
                                 ->andWhere("r.name != 'ROLE_USER'");
 
-                            return $query;
-                        },
-                )
+                        return $query;
+                    },
+                ]
             );
         }
     }
@@ -103,9 +96,9 @@ class ImportUserType extends AbstractType
     {
         $resolver
         ->setDefaults(
-            array(
+            [
                 'translation_domain' => 'platform',
-                )
+                ]
         );
     }
 }

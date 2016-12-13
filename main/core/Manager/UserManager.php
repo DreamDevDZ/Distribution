@@ -384,12 +384,15 @@ class UserManager
         $sendMail = true,
         $logger = null,
         $additionalRoles = [],
-        $enableEmailNotifaction = false,
         $options = []
     ) {
         //build options
         if (!isset($options['ignore-update'])) {
             $options['ignore-update'] = false;
+        }
+
+        if (!isset($options['single-validate'])) {
+            $options['single-validate'] = true;
         }
 
         $returnValues = [];
@@ -466,7 +469,7 @@ class UserManager
 
             $hasPersonalWorkspace = isset($user[11]) ? (bool) $user[11] : false;
             $isMailValidated = isset($user[12]) ? (bool) $user[12] : false;
-            $isMailNotified = isset($user[13]) ? (bool) $user[13] : $enableEmailNotifaction;
+            $isMailNotified = isset($user[13]) ? (bool) $user[13] : false;
 
             if ($modelName) {
                 $model = $this->objectManager

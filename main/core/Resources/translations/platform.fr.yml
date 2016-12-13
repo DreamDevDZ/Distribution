@@ -1345,3 +1345,6 @@ ie_support_message: Internet Explorer est supporté à partir de la version 11.
 enable_opengraph: Activer opengraph
 temporary_directory: Dossier temporaire
 opening_date: Date d'ouverture
+activate_personal_workspace: Activer l'espace personnel
+activate_email_validation: Activer la validation par email
+activate_email_notification: Activer la notification par email
